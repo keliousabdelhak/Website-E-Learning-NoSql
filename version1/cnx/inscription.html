@@ -1,0 +1,185 @@
+<html>
+    <head>
+         <meta charset="UTF-8">
+
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <style>
+        body{
+            background-image: url(Blur-Wallpapers-21-1920-x-1200.jpg);
+            background-color: #E8E8E8;
+        }
+        
+        div{
+    border: 1px;
+    background-color:white;
+    width: 400px;
+    margin-left: 35%;
+    margin-top: 50px;
+    padding: 30px;
+    /*color: aliceblue;*/
+        
+
+        }
+        
+        .pf{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+              .pff{
+          background-color: #383838;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+     
+        h1 { color: #ff4411; font-size: 25px; font-family: 'Signika', sans-serif; padding-bottom: 10px; text-align: center; }
+        
+        
+    
+        </style>
+    </head>
+    <body>
+        <div>
+         	<h1  >Demande d'ajout</h1>
+        <input id="txtNom1" type="text" placeholder="Nom complet..." class="pf"><br>
+        <input id="txtNom2" type="text" placeholder="Grade..." class="pf"><br>	
+        <input id="txtNom3" type="text" placeholder="Numéro téléphone..." class="pf"><br>
+        <input id="txtEmail" type="email" placeholder="Email..." class="pf"><br>
+        <input id="txtu" type="email" placeholder="Universtité..." class="pf"><br>
+        <input id="txtd" type="email" placeholder="Département..." class="pf"><br>
+        <input id="txtf" type="email" placeholder="Faculté..." class="pf"><br>
+        <textarea placeholder="Commentaire..." class="pf"  rows="4" id="txtc"></textarea>
+        <!--<input id="txtPassword" type="password" placeholder="Mot de passe..." class="pf"><br>
+           <input id="txtPassword" type="password" placeholder="Confirmer mot de passe..." class="pf"><br>-->
+        <button id="btnSingUp" style="background-color:white;color:#0099FF;border-color:black;cursor: pointer; border-color: #ff4411;font-size:18px;" class="pff">Envoyer mes information </button><br>
+               <!--<button id="btnLogout" style="background-color:white;color:black;border-color:black;cursor: pointer; " class="pff">Déconnexion</button>-->
+               <script>console.log('hahah');</script>
+               <script>
+             // Initialize Firebase
+  const config = {
+    apiKey: "AIzaSyCTDZc7XPVCKZC_JA3nVJmj2xQ7rojtbOE",
+    authDomain: "haqou-40d21.firebaseapp.com",
+    databaseURL: "https://haqou-40d21.firebaseio.com",
+    projectId: "haqou-40d21",
+    storageBucket: "haqou-40d21.appspot.com",
+    messagingSenderId: "241003348049"
+  };
+  firebase.initializeApp(config);
+  console.log('oui');
+    console.log('not logged in ');
+     var database = firebase.database();
+     var ref = database.ref('demandes');
+    
+    // get element 
+    var txtEmail = document.getElementById('txtEmail');//email
+    var txtNom1 = document.getElementById('txtNom1');//nom_complet
+    var txtNom2 = document.getElementById('txtNom2');//grade
+    var txtNom3 = document.getElementById('txtNom3');//numéro_tlfn
+    var txtu = document.getElementById('txtu');//université
+    var txtd = document.getElementById('txtd');//departmn
+    var txtf = document.getElementById('txtf');//faculte
+    var txtc = document.getElementById('txtc');//commentaire
+    const btnSingUp = document.getElementById('btnSingUp');
+    
+    /*var txtNom1 = txtNom.value;
+    var txtSpécialité1 = txtSpécialité.value;
+    var txtEmail1 = txtEmail.value;
+    var data = {
+        nom_complet : txtNom1 ,
+        spécialité : txtSpécialité1,
+        Email : txtEmail1
+    }*/
+    // ref.push(data);
+   // add login event 
+    
+   /* btnLogin.addEventListener('click', e=>{
+        // get email and pass
+        const email = txtEmail.value;
+        const pass = txtPassword.value;
+        const auth =firebase.auth();
+        // sign in
+        const promise = auth.signInWithEmailAndPassword(email, pass);
+        promise.catch(e => console.log(e.message));
+       // window.location.replace("store.html");
+    });*/
+    
+    //add signup event
+    btnSingUp.addEventListener('click', e=>{
+        // get var
+        var email = txtEmail.value;
+        var nom = txtNom1.value;
+        var grade = txtNom2.value;
+        var numero_téléphone = txtNom3.value;
+        var universite = txtu.value;
+        var departement = txtd.value;
+        var faculte = txtf.value;
+        var commentaire = txtc.value;
+        
+                 // date 
+          function dateFr()
+{
+     // les noms de jours / mois
+     var jours = new Array("dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi");
+     var mois = new Array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
+     // on recupere la date
+     var date = new Date();
+     // on construit le message
+     var message = jours[date.getDay()] + " ";   // nom du jour
+     message += date.getDate() + " ";   // numero du jour
+     message += mois[date.getMonth()] + " ";   // mois
+     message += date.getFullYear();
+     return message;
+}
+    function heure()
+{
+     var date = new Date();
+     var heure = date.getHours();
+     var minutes = date.getMinutes();
+     if(minutes < 10)
+          minutes = "0" + minutes;
+     return heure + "h" + minutes;
+}
+  
+   var a66 = dateFr()+" à "+heure();
+        
+        var data = {
+            date :a66,
+            Email : email,
+            Nom : nom,
+            Grade :grade,
+            Numéro :numero_téléphone,
+            Université : {
+            Nom_unv : universite,
+            Département : departement,
+            Faculté : faculte 
+            },
+            Commentaire :commentaire
+                
+        }
+        
+        if ((email=='')||(nom=='')||(grade=='')||(numero_téléphone=='')||(universite=='')||(departement=='')||(faculte=='')){
+            alert('Veuillez saisir tout les champs');
+        }else{
+        ref.push(data);
+        console.log('oui');
+        document.location.href = 'traitement.html';}
+        
+    });
+    
+   
+            </script>
+      
+        </div>
+        
+       
+    </body>
+</html>

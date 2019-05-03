@@ -1,0 +1,32 @@
+<html>
+<script>
+/* Déclaration de la fonction 'maFonction' */
+ function maFonction(monObjet)
+ {
+   monObjet.marque = "Toyota";
+ }
+ 
+ /*
+  * Déclaration de la variable 'mavoiture';
+  * création et initialisation d'un nouvel objet;
+  * assigner une référence à 'mavoiture'
+  */
+ var mavoiture = {
+   marque: "Honda",
+   modele: "Accord",
+   annee: 1998
+ };
+
+ /* Affiche 'Honda' */
+ console.log(mavoiture.marque);
+
+ /* Passer la référence de l'objet à la fonction */
+ maFonction(mavoiture);
+
+ /*
+  * Affiche 'Toyota' pour valeur de la propriété 'marque'
+  * de l'objet. C'est ce que la fonction a changé.
+  */
+ console.log(mavoiture.marque);
+    </script>
+</html>

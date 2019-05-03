@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+	<title>Enregistrer</title>
+	<style>
+                body{
+                    background-image: url(Blur-Wallpapers-21-1920-x-1200.jpg);
+            background-color: #E0E0E0;
+        }
+        div{
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .a1{
+            margin-left: 20px;
+            width: 300px;
+            height: 620px;
+            background-color: #FFFFFF;
+        }
+        .a2{
+            position: absolute;
+            margin-left: 200px;
+            width: 980px;
+            height: 1130px;
+            background-color: #FFFFFF;
+            margin-bottom: 40px;
+            
+            
+      
+        }
+        /*body{
+            display: flex;
+            min-height:  70vh;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }*/
+        #uploader{
+            
+            -webkit-appearance:none;
+            appearance:none;
+            width: 100%;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+                #uploader1{
+            
+            -webkit-appearance:none;
+            appearance:none;
+            width: 100%;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+        
+        
+                  .az{
+                position: absolute;
+                overflow: hidden;
+                z-index: -1;
+                opacity: 0;
+                
+                margin-left: 130px;
+                height: 0.1px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                width: 0.1px;
+                margin-top:0;
+            }
+    
+                label{
+                font-family: 'Varela Round', sans-serif;
+                margin-top: 10px;
+                font-size: 20px;
+                width: 170px;
+                border-radius: 4px;
+                margin-left: 0px;
+                cursor: pointer;
+                background-color: #E8E8E8;
+                color: #36b1b9;
+                padding-bottom: 8px;
+                padding-top: 8px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+         .esp{ color: #ff4411; font-size: 25px; font-family: 'Signika', sans-serif; padding-bottom: 10px; text-align: center; }
+         .esp1{background-color: #ff4411;
+             color: white; 
+             font-size: 25px;
+             font-family: 'Signika', sans-serif;
+             padding: 20px;
+             text-align: center; }
+        
+            .kls{
+    border: 1px;
+    background-color:white;
+    width: 500px;
+    margin-left: 23%;
+    margin-top: 0px;
+    padding: 30px;
+    /*color: aliceblue;*/
+            
+        
+
+        }
+                .pf{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+                        .pfz{
+    width: 163px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+                      .pff{
+          background-color: #383838;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+        p{
+             color: #808080; font-size: 16px; font-family: 'Signika', sans-serif;
+        }
+        ul{
+            color: #808080; font-size: 18px; font-family: 'Signika', sans-serif;
+            list-style:none;
+        }
+        .top{
+            padding: 20px;
+            
+        }
+        .lien{
+          text-decoration: none;
+            color: forestgreen;
+            font-size: 16px; font-family: 'Signika', sans-serif;
+            margin-left: 100px;
+            
+        }
+        a{
+            text-decoration: none;
+            color: #808080;
+        }
+        .ema{
+                        
+        margin-left: 430px;
+        font-family: 'Signika', sans-serif;
+        text-decoration: none;
+        color:#006600;
+         font-size: 22px;
+        
+        }
+    </style>
+</head>
+<body>
+
+<div class="a2">
+<div class="kls" >
+      <img src="literature-64.png" style="margin-left:215px;">
+       <h2 class="esp">Ajouter un cours . </h2>
+       <hr style="height: 2px; color: #839D2D; background-color: #FF3300; width: 95%; border: none;">
+        <input id="a48" type="text" placeholder="Domaine..." class="pf"><br>
+        <input id="a2" type="text" placeholder="Spécialité..." class="pf"><br>
+        <input id="a1" type="text" placeholder="Titre..." class="pf"><br>	
+        <input id="ac1" type="text" placeholder="Mot Clé 1..." class="pfz">
+        <input id="ac2" type="text" placeholder="Mot Clé 2..." class="pfz">
+        <input id="ac3" type="text" placeholder="Mot Clé 3..." class="pfz">
+        <textarea placeholder="Description..." class="pf"  rows="4" id="a3"></textarea><br><br>
+<!--<h2 style="font-family: 'Varela Round', sans-serif;font-size: 20px;color:#606060;margin-left:125px;">Ajouter un fichier</h2>-->
+<div style=" width:500px; border:2px dashed #ff4411; padding:3px;color: #ff4411; font-size: 16px; font-family: Signika, sans-serif;">
+<p style="margin-left:130px;">Inserer la vidéo (mp4,move...etc) </p>
+<progress value="0" max="100" id="uploader" style="margin-left:0px;">0%</progress><br><br>
+
+<!--         ici -->
+
+
+<label for="fileButton" style="margin-left:160px;" >Inserer la vidéo</label>
+<input type="file" value="upload" id="fileButton" class="az"  /><br><br>
+    </div> 
+            
+             <!-- test test -->
+    <div style=" width:500px; border:2px dashed #ff4411; padding:3px;color: #ff4411; font-size: 16px; font-family: Signika, sans-serif;">
+            <p style="margin-left:130px;">Inserer le document (pdf,word...etc) </p>
+             <progress value="0" max="100" id="uploader1" style="margin-left:0px;">0%</progress><br><br>
+
+<!--         ici -->
+
+
+<label for="fileButton1" style="margin-left:160px;" >Inserer le docs&nbsp;&nbsp;</label>
+<input type="file" value="upload" id="fileButton1" class="az"  /><br><br>
+    </div>
+             <!-- fin test test -->
+             
+             
+              <p>Avant de cliquer sur envoyer ! Veuillez attendre jusqu'a la fin du chargement de la vidéo. </p>
+               <button  style="background-color:white;color:#ff4411;border-color:#3366FF;cursor: pointer;font-size: 18px; font-family: 'Signika', sans-serif; " class="pff" id="a4">Envoyer</button><br>
+
+    
+    <button id="btnLogout" style="background-color:#CC3300;color:white;cursor: pointer;margin-top:0px;" class="pff">Déconnexion</button>
+<!-- ici -->
+    </div><br>
+    <a href="ter.html" class="ema">Voir les cours >></a>
+    </div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCTDZc7XPVCKZC_JA3nVJmj2xQ7rojtbOE",
+    authDomain: "haqou-40d21.firebaseapp.com",
+    databaseURL: "https://haqou-40d21.firebaseio.com",
+    projectId: "haqou-40d21",
+    storageBucket: "haqou-40d21.appspot.com",
+    messagingSenderId: "241003348049"
+  };
+  firebase.initializeApp(config);
+    
+     var database = firebase.database();
+     var ref = database.ref('cours');
+    
+    
+    //get elements1
+    var uploader1 = document.getElementById('uploader1');
+    var fileButton1 = document.getElementById('fileButton1');    
+    
+    //get elements
+    var uploader = document.getElementById('uploader');
+    var fileButton = document.getElementById('fileButton');
+    var a1 = document.getElementById('a1');
+    var a48 = document.getElementById('a48');
+    var ac1 = document.getElementById('ac1');
+    var ac2 = document.getElementById('ac2');
+    var ac3 = document.getElementById('ac3');
+    //listen for file slection
+    fileButton.addEventListener('change',function(e){
+        //get filex
+        var file = e.target.files[0];
+        //la ref ta3 storage
+        var storageRef = firebase.storage().ref('sweet_gifs/'+file.name);
+        //hetit le fichier 
+        var task = storageRef.put(file);
+        //update progress bar
+        task.on('state_changed',   
+               function progress(snapshot){
+            var percentage =(snapshot.bytesTransferred /snapshot.totalBytes) * 100;
+            uploader.value = percentage;
+            
+        },
+               function error(){
+                   
+               },
+               //function complete(){
+                   
+              // },
+                 function() {
+            //test1
+        fileButton1.addEventListener('change',function(e){
+        //get filex
+        var file = e.target.files[0];
+        //la ref ta3 storage
+        var storageRef = firebase.storage().ref('sweet_gifs/'+file.name);
+        //hetit le fichier 
+        var task1 = storageRef.put(file);
+        //update progress bar
+
+                //fintest1
+  // Handle successful uploads on complete
+  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  
+ task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    console.log('File available atttt', downloadURL);
+      console.log('hah');
+     //document.write('<a href='+downloadURL+'>video</a>');
+            task1.on('state_changed',   
+               function progress(snapshot){
+            var percentage =(snapshot.bytesTransferred /snapshot.totalBytes) * 100;
+            uploader1.value = percentage;
+                                      task1.snapshot.ref.getDownloadURL().then(function(downloadURL1) {
+    console.log('File available at', downloadURL1);
+ 
+        a4.addEventListener('click', e =>{
+        var a11 = a1.value;
+        var a22 = a2.value;
+        var a33 = a3.value;
+        var a44 = a48.value;
+        var ac1m = ac1.value;
+        var ac2m = ac2.value;
+        var ac3m = ac3.value;
+      
+        
+         // date 
+          function dateFr()
+{
+     // les noms de jours / mois
+     var jours = new Array("dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi");
+     var mois = new Array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
+     // on recupere la date
+     var date = new Date();
+     // on construit le message
+     var message = jours[date.getDay()] + " ";   // nom du jour
+     message += date.getDate() + " ";   // numero du jour
+     message += mois[date.getMonth()] + " ";   // mois
+     message += date.getFullYear();
+     return message;
+}
+    function heure()
+{
+     var date = new Date();
+     var heure = date.getHours();
+     var minutes = date.getMinutes();
+     if(minutes < 10)
+          minutes = "0" + minutes;
+     return heure + "h" + minutes;
+}
+  
+   var a66 = dateFr()+" à "+heure();
+        // fin date 
+        var data = {
+            
+        titre_cours : a11 ,
+        spécialité : a22 ,
+        description : a33 ,
+        video : downloadURL ,
+        pdf : downloadURL1 ,
+        date : a66,
+        domaine : a44,
+        cle1 : ac1m,
+        cle2 : ac2m,
+        cle3 :ac3m
+         
+        
+    }
+        ref.push(data);
+        
+      alert("Votre cours a était ajouter ")  ;    
+        // document.write(downloadURL);
+           // document.write(a11,a22,a33);
+                   });
+        
+    });
+            
+  });
+  });
+}
+                
+               );
+        
+                            
+        
+                                });
+    
+        btnLogout.addEventListener('click', e =>{
+        firebase.auth().signOut();
+            
+    });
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+        if(firebaseUser) {
+            console.log(firebaseUser);
+            console.log('Connecté ');
+            //document.location.href = 'https://www.facebook.com/';
+        }else {
+            console.log('not logged in ');
+           document.location.href = '../index.html';
+        }
+        
+    });
+    
+    // ajouter la video
+    
+   /* a4.addEventListener('click', e =>{
+        var a1 = document.getElementById('a1');
+        var a2 = document.getElementById('a2');
+        var a3 = document.getElementById('a3');
+   
+    });*/
+        var ref = firebase.database().ref('cours');
+
+ref.on("value", function(snapshot) {
+   console.log(snapshot.val());
+}, function (error) {
+   
+   console.log("Error: " + error.code);
+})});
+            btnLogout.addEventListener('click', e =>{
+        firebase.auth().signOut();
+            
+    });
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+        if(firebaseUser) {
+            console.log(firebaseUser);
+            console.log('Connecté ');
+            //document.location.href = 'https://www.facebook.com/';
+        }else {
+            console.log('not logged in ');
+           document.location.href = '../index.html';
+        }
+        
+    });
+</script>
+
+
+</body>
+</html>

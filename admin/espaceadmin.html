@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>espace_admin</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+      
+   <style type="text/css">
+         body{
+            background: rgba(121, 90, 71, 0.1);
+        }
+        .wrimagecard{	
+	margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    position: relative;
+    background: #fff;
+    box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.wrimagecard .fa{
+	position: relative;
+    font-size: 70px;
+}
+.wrimagecard-topimage_header{
+padding: 20px;
+}
+a.wrimagecard:hover, .wrimagecard-topimage:hover {
+    box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2);
+}
+.wrimagecard-topimage a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.wrimagecard-topimage_title {
+    padding: 20px 24px;
+    height: 80px;
+    padding-bottom: 0.75rem;
+    position: relative;
+}
+.wrimagecard-topimage a {
+    border-bottom: none;
+    text-decoration: none;
+    color: #525c65;
+    transition: color 0.3s ease;
+} 
+       @font-face {
+    font-family: 'MaSuperPolice';
+    src: url('font/Righteous-Regular.ttf');
+}
+       #admin
+       {
+           
+    font-family: 'MaSuperPolice', Arial, serif;
+       }
+
+
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDYvGSbEt4B36t_-kRiPPt1xQXq5k5ez3w",
+    authDomain: "e-learning-d5a6b.firebaseapp.com",
+    databaseURL: "https://e-learning-d5a6b.firebaseio.com",
+    projectId: "e-learning-d5a6b",
+    storageBucket: "",
+    messagingSenderId: "510050828300"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <header>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <div class="col-sm-9" style="background: #193356;
+    color: #fff;
+    height: 7vw;">
+    
+ <!--  <img src="img/Learning-Link-logo-(MASTER)%20(1).png"s alt="" style="margin-top: -5.8vw;
+
+margin-left: -4vw;
+
+display: block;s">-->
+   <h1 id="admin">Espace Administrateur</h1>
+    
+    </div>
+     <div class="col-sm-3" style="background: #193356;
+    color: #fff;
+    height: 7vw;">
+    
+     <p style="margin-top: 1vw;"><span  style=" font-family: 'MaSuperPolice'">pseudo :</span><span style="font-weight: bold;"> Binouche_mstf21</span></p>
+ 
+    <a href="login.html"><p style="margin-top: -0.6vw;
+
+font-style: oblique;"><i class="fa fa-sign-out" aria-hidden="true"></i><span style=" ;font-size: medium;margin-left: 3vw;font-size: medium;"></span>Deconnexion</p>
+</a>
+    </div>
+    </header> 
+    
+    <div class="container-fluid">
+   <div class="col-sm-1" style="width: 0vw;"></div>
+  <div class="col-sm-10" style="    background: #193356;
+    width: 90vw; width: 90vw;
+    margin-top: 2vw;
+    height: 3vw;border-top-left-radius: 0.5vw;
+    border-top-right-radius: 0.5vw;">
+        
+       
+    
+ 
+  
+  
+    </div>
+  <div class="col-sm-1" style="width: 0vw;"></div>  
+    </div>
+    
+     <div class="container-fluid">
+     
+   <div class="col-sm-1" style="width: 0vw;"></div>
+  <div class="col-sm-10" style="    background: #fff;
+    width: 90vw; 
+    
+    ">
+       <div class="container-fluid">
+	<div class="row" style="margin-left:60px;margin-top:50px;">
+	
+ <div class=" col-sm-1" style=" margin-top: 1vw ;"></div> 
+        	<div class="col-md-3 col-sm-4" style=" margin-top: 1vw ;">
+      <div class="wrimagecard wrimagecard-topimage">
+          <a href="lire_d.html" target="_blank">
+            <div class="wrimagecard-topimage_header" style="background-color: rgba(121, 90, 71, 0.1)">
+           <center><i class="fa fa-bars" style="color:#1b4775"> </i></center> 
+          </div>
+          <div class="wrimagecard-topimage_title">
+            <h4>Aficher Liste des demandes
+
+            <div class="pull-right badge" id="WrNavigation"></div></h4>
+          </div>
+          
+        </a>
+      </div>
+	</div>
+             <div class="col-md-3 col-sm-4" style=" margin-top: 1vw ;">
+      <div class="wrimagecard wrimagecard-topimage">
+          <a href="inscription.html" target="_blank">
+          <div class="wrimagecard-topimage_header" style="background-color: rgba(121, 90, 71, 0.1)">
+            <center><i class="fa fa-plus-square" aria-hidden="true" style="color:#26771e"> </i></center>
+          </div>
+          <div class="wrimagecard-topimage_title" >
+            <h4>Ajouter un enseignant
+
+            <div class="pull-right badge" id="WrForms"></div>
+            </h4>
+          </div>
+          
+        </a>
+      </div>
+	</div>  
+<div class="col-md-3 col-sm-4" style=" margin-top: 1vw ;">
+      <div class="wrimagecard wrimagecard-topimage">
+          <a href="#">
+          <div class="wrimagecard-topimage_header" style="background-color: rgba(121, 90, 71, 0.1)">
+            <center><i class="fa fa-pencil-square-o" style="color:#dc6209"> </i></center>
+          </div>
+          <div class="wrimagecard-topimage_title" >
+            <h4>Modifier et supprimer Enseignant
+
+            <div class="pull-right badge" id="WrForms"></div>
+            </h4>
+          </div>
+          
+        </a>
+      </div>
+	</div>
+
+  
+  
+
+   
+       </div> 
+    
+      
+         <div class="container-fluid">
+            <div class=" col-sm-1" style=" margin-top: 1vw ;"></div>   
+      
+   
+	
+             
+             </div>
+      
+  
+  
+   
+  <div class="col-sm-1" style="width: 0vw;"></div>  
+    </div>
+    
+    
+
+  
+ 
+
+ 
+
+ <script type="text/javascript">   
+</body>
+</html>

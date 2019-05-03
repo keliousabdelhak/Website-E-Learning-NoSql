@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+       
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCTDZc7XPVCKZC_JA3nVJmj2xQ7rojtbOE",
+    authDomain: "haqou-40d21.firebaseapp.com",
+    databaseURL: "https://haqou-40d21.firebaseio.com",
+    projectId: "haqou-40d21",
+    storageBucket: "haqou-40d21.appspot.com",
+    messagingSenderId: "241003348049"
+  };
+  firebase.initializeApp(config);
+    var ref = firebase.database().ref('demandes');
+        
+        firebase.database().ref("demandes").on("value", function(snapshot) {
+            document.write('<div style="font-family: Signika, sans-serif;font-size: 28px;color: #0066CC;margin-left:38%;"><br>La liste des demandes</div><br><br>');
+            document.write('<div style="font-family: Signika, sans-serif;font-size: 18px;color: #676767;margin-left:14%;">Dans cet ordre : Nom | Grade | Email | Numéro téléphone | Université | Faculté | Département |   Commentaire | Date </div><br>');
+            document.write('<hr><br>');
+            var i=1;
+            snapshot.forEach(function(demandesSnapshot) {
+            
+                var childData = demandesSnapshot.val();
+                document.write('<table style="order-collapse: collapse;margin-left:30px;font-family: Signika, sans-serif;"><tr><td style=" border: 1px solid black;height:40px;padding:10px; width:20px;color:#339933">',i,'</td><td style=" border: 1px solid black;height:40px;padding:10px; width:110px;">',childData.Nom,'</td><td style=" border: 1px solid black;height:40px;padding:10px; width:70px;">',childData.Grade,'</td><td style=" border: 1px solid black;height:40px;padding:10px; width:120px;">',childData.Email,'</td><td style=" border: 1px solid black;height:40px;padding:10px; width:60px;">',childData.Numéro,'</td><td style=" border: 1px solid black;height:40px;padding:10px; width:50px;">',
+                childData.Université.Nom_unv,'</td><td style=" border: 1px solid black;height:40px;padding:10px; width:50px;">',childData.Université.Faculté,'</td><td style=" border: 1px solid black;height:40px;padding:10px; width:60px;">',childData.Université.Département,'</td><td style=" border: 1px solid black;height:40px;padding:10px; width:250px;">',
+                childData.Commentaire,'<td style=" border: 1px solid black;height:40px;padding:10px;color:red;">',childData.date,'</td></td></tr></table><br>'              
+                              
+                              );
+                i = i+1;
+            
+            });
+            
+        });
+        
+        
+        
+
+</script>
+       
+       
+       
+    </body>
+</html>

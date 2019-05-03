@@ -1,0 +1,61 @@
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <style>
+        /*body{
+           background-image: url(Blur-Wallpapers-21-1920-x-1200.jpg);
+        }*/
+    </style>
+</head>
+<body>
+
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <p id="dynamique"></p>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCTDZc7XPVCKZC_JA3nVJmj2xQ7rojtbOE",
+    authDomain: "haqou-40d21.firebaseapp.com",
+    databaseURL: "https://haqou-40d21.firebaseio.com",
+    projectId: "haqou-40d21",
+    storageBucket: "haqou-40d21.appspot.com",
+    messagingSenderId: "241003348049"
+  };
+  firebase.initializeApp(config);
+    var ref = firebase.database().ref('cours');
+  
+    //hnaya 
+ firebase.database().ref("cours").on("value", function(snapshot) {
+     
+    document.write('<br><h1 style="margin-left:41%; color: #ff4411; font-size: 25px; font-family: Signika, sans-serif; padding-bottom: 10px; ">La liste des cours</h1>');
+      snapshot.forEach(function(coursSnapshot) {
+        // key
+        //var key = childSnapshot.key;
+        //document.write(key);
+        // value, could be object
+        var childData = coursSnapshot.val();
+        
+       document.write('<div style=" width:500px;margin-left:30%; border:2px dashed #ff4411; padding:13px;color: #383838; font-size: 16px; font-family: Signika, sans-serif;">   <video width="500" height="300" controls> <source src="',childData.video,'" type="video/mp4"> </video> <br><br> Titre: ',childData.titre_cours,'<br><br>Domaine: ',childData.domaine,'<br><br> Spécialité: ',childData.spécialité,'<br><br>Description: ',childData.description,'<br><br><p style="color:#C94848;">Publier le ',childData.date,'</p><br><br>','<a href="',childData.pdf,'" target="_blank" style="text-decoration: none;color: #ffffff;margin-left:170px;background-color:#006600;padding:10px;">Ouvrir le document</a><br></div><br>'
+                     
+                     );
+        // Do what you want with these key/values here
+        
+        });
+   });
+    
+    //fin
+    
+ref.on("value", function(snapshot) {
+   console.log(snapshot.val());
+}, function (error) {
+   console.log("Error: " + error.code);
+});
+</script>
+  
+    </body>
+
+</html>
